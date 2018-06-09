@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% comment %}
+反向解析
+{% endcomment %}
+<h1></h1>
+<hr>
+
+{{ user.showname }}
+<div>
+    <ul>
+        {% for foo in userlist %}
+            {% if forloop.counter|divisibleby:2 %}
+           <li style="color: red">  {{ forloop.counter }}  {{ foo.showname }} </li>
+            {% else %}
+            <li style="color: blue">  {{ forloop.counter }}  {{ foo.showname }} </li>
+            {% endif %}
+        {% empty %}
+            没有任何数据
+
+        {% endfor %}
+
+
+    </ul>
+
+</div>
+</body>
+</html>
